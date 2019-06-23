@@ -9,7 +9,7 @@ var math = {
     "4":()=>{return a*b},
     "0":()=>{return "Bye"}
 } 
-// abc = { "name":"Gopal","Age":()=>{} }
+// abc = { "name":"Gopal","Age":()=>{}}
 // abc["Age"]()
 while(c!="0"){
     c = prompt("Enter Your Choice");
