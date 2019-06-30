@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <form class="form" #f='ngForm' (ngSubmit)="search(f.value)">
+    <input type="text" name="search" ngModel='username'>
+    <button type="submit">Search</button>
+  </form>
+
+  <pre>
+{{response | json}}
+  </pre>
+</div>

@@ -7,13 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-
-// import {Routes, RouterModule} from '@angular/router';
-// const r: Routes = [
-//   {path:'home',component:LoginPageComponent}
-// ]
+import { HttpClientModule } from '@angular/common/http';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +19,15 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     HomeComponent,
     LoginPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
