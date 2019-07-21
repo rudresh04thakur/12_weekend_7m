@@ -16,6 +16,18 @@ export class AllService {
     }))
   }
 
+  getRecord(id){
+    return this._http.get(this.url+"get.php?id="+id).pipe(map((res)=>{
+      return res
+    }))
+  }
+
+  list(){
+    return this._http.get(this.url+"list.php").pipe(map((res)=>{
+      return res;
+    }))
+  }
+
   gitAPI(username){
     return this._http.get('https://api.github.com/search/users?q='+username).pipe(map((res)=>{
     return res;

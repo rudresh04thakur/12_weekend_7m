@@ -11,6 +11,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
+import { EditComponent } from './edit/edit.component';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListComponent } from './list/list.component';
     HomeComponent,
     LoginPageComponent,
     RegisterComponent,
-    ListComponent
+    ListComponent,
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

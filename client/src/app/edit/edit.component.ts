@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { AllService } from '../all.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['../login-page/login-page.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class EditComponent implements OnInit {
+
   reg: FormGroup;
   formSubmitted = false;
   constructor(private _fb: FormBuilder, private _ser:AllService) {
@@ -37,19 +38,6 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-
-  register(data) {
-   console.log("Form Data == >",data)
-   this.formSubmitted = true;
-   if (data.invalid) {
-     console.log("Inalid Form")
-   } else {
-     //console.log("Data for Register ", data.value)
-     this._ser.register(data.value).subscribe((res)=>{
-       console.log("Response from API ",res)
-     })
-   }
-  }
 
   ngOnInit() {
   }

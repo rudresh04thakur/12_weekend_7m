@@ -9,16 +9,14 @@ import { AllService } from '../all.service'
 export class ListComponent implements OnInit {
 
   constructor(private _ser:AllService) { }
-  username;
   response;
   ngOnInit() {
-  }
-
-  search(data){
-    console.log("User Name to Search", data)
-    this._ser.gitAPI(data.search).subscribe((res)=>{
+    this._ser.list().subscribe((res)=>{
+      console.log("List => ",res)
       this.response = res;
     })
   }
+
+
 
 }
