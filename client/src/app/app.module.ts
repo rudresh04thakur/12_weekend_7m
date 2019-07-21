@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ViewComponent } from './view/view.component';
     RegisterComponent,
     ListComponent,
     EditComponent,
-    ViewComponent
+    ViewComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

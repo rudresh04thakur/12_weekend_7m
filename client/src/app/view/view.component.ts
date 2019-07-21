@@ -14,6 +14,7 @@ export class ViewComponent implements OnInit {
     let id = this._ar.snapshot.params.id
     this._ser.getRecord(id).subscribe((res)=>{
       this.response = res;
+      console.log("Type of Response====>",typeof(this.response))
     })
   }
 
