@@ -16,6 +16,13 @@ export class AllService {
     }))
   }
 
+  update(data){
+    console.log("Dadta=============",data);
+    return this._http.post(this.url+"update.php",data).pipe(map((res)=>{
+      return res
+    }))
+  }
+
   getRecord(id){
     return this._http.get(this.url+"get.php?id="+id).pipe(map((res)=>{
       return res
