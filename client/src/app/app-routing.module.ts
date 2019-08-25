@@ -6,20 +6,23 @@ import { RegisterComponent } from './register/register.component';
 import { ListComponent } from './list/list.component'
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"home",component:HomeComponent},
   {path:"login",component:LoginPageComponent},
   {path:"register",component:RegisterComponent},
-  {path:'list',component:ListComponent},
-  {path:'view/:id',component:ViewComponent},
+  {path:'list',component:ListComponent, children:[
+    {path:'view/:id',component:ViewComponent},
+    {path:'register', component:RegisterComponent} //list/view/121
+  ],canActivate:[AuthGuard]},
   // {path:'edit/:id',component:EditComponent},
    {path:'edit/:id',component:RegisterComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

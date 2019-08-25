@@ -1,5 +1,6 @@
 
 <div class="container-fluid">
+  <button (click)="redirectTo('/list/register')">Regiater</button>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -24,11 +25,12 @@
           <!-- http://localhost:4200/edit/121 -->
           <a [routerLink]="['/edit',re.id]" class="btn btn-info"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;
           <!-- http://localhost:4200/edit/11?act=append -->
-          <a routerLink="/view/{{re.id}}" class="btn btn-primary"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
+          <a routerLink="/list/view/{{re.id}}" class="btn btn-primary"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
           <button (click)="delete(re.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button> &nbsp;&nbsp;
         </td>
       </tr>
       <!-- $7Mentor$3mpLoy33$ -->
     </tbody>
   </table>
+  <router-outlet></router-outlet>
 </div>

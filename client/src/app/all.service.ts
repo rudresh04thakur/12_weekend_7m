@@ -2,12 +2,21 @@ import { Injectable } from '@angular/core';
 // import { Http } from '@angular/http'
 import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators' //tap
+import { Observable } from 'rxjs'
+
+interface List{
+  name:String;
+  contact:String;
+  email:String;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AllService {
   url = "http://localhost/12_clinet_api/";
-
+  //url = "http://localhost:3000/"
+  listArray:List;
   constructor(private _http:HttpClient) { }
 
   register(data){
@@ -23,16 +32,26 @@ export class AllService {
     }))
   }
 
+
+  login(data){
+    //console.log("Dadta=============",data);
+    return this._http.post(this.url+"login.php",data).pipe(map((res)=>{
+      return res
+    }))
+  }
+
+
   getRecord(id){
     return this._http.get(this.url+"get.php?id="+id).pipe(map((res)=>{
       return res
     }))
   }
 
-  list(){
+  list():Observable<List[]>{
     return this._http.get(this.url+"list.php").pipe(map((res)=>{
-      return res;
+      return <List[]>res;
     }))
+    
   }
 
   gitAPI(username){

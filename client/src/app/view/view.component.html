@@ -1,17 +1,17 @@
-{{response | json}}
-<div class="form col-md-6 col-md-offset-3">
+<!-- {{response | json}} -->
+<!-- <div class="form col-md-6 col-md-offset-3">
   <div class="form-group" *ngFor="let r of response | keys;let i=index">
     <label>{{r.key}}</label>
     <div class="form-control">
       {{r.value}}
     </div>
   </div>
-</div>
+</div> -->
 
-<table class="table talble-striped">
+ <table class="table talble-striped">
  <tr *ngFor="let r of response | keys;let i=index">
    <th>{{r.key}}</th>
      <td>{{r.value}}</td>
  </tr>
-</table>
-{{"200" | currency:'USD':true:'4.4'}}
+</table> 
+<!-- {{"200" | currency:'USD':true:'4.4'}} -->

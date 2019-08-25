@@ -67,6 +67,12 @@ export class RegisterComponent implements OnInit {
         //console.log("Data for Register ", data.value)
         this._ser.register(data.value).subscribe((res) => {
           console.log("Response from API ", res)
+          this.response = res
+          if (res['code'] == 'true') {
+            alert("Register Successful");
+            this._r.navigate(['/list'])
+            $('#myModal').modal('show');
+          }
         })
       }
     }
