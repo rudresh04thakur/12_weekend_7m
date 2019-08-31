@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component'
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { AuthGuard } from './auth.guard';
+import { LogsComponent } from './logs/logs.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     {path:'register', component:RegisterComponent} //list/view/121
   ],canActivate:[AuthGuard]},
   // {path:'edit/:id',component:EditComponent},
-   {path:'edit/:id',component:RegisterComponent}
+   {path:'edit/:id',component:RegisterComponent},
+   {path: 'logs',component:LogsComponent}
 ];
 
 @NgModule({

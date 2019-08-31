@@ -14,6 +14,7 @@ import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
 import { KeysPipe } from './keys.pipe';
+import { LogsComponent } from './logs/logs.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { KeysPipe } from './keys.pipe';
     ListComponent,
     EditComponent,
     ViewComponent,
-    KeysPipe
+    KeysPipe,
+    LogsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { AllService } from '../all.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import 'bootstrap';
+import { ConsoleLoggerService } from '../console-logger.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   response;
 
   constructor(private _fb: FormBuilder, private _ser: AllService,
-    private _ar: ActivatedRoute, private _r: Router) {
+    private _ar: ActivatedRoute, private _r: Router,private _logger:ConsoleLoggerService) {
     this.reg = this._fb.group({
       id: [""],
       name: ["", [Validators.required, Validators.pattern('[A-Za-z]{3,}')]],
@@ -52,7 +53,7 @@ export class RegisterComponent implements OnInit {
   register(data) {
     if (data.value.id != "") {
       this._ser.update(data.value).subscribe((res) => {
-        console.log("Update ", res);
+        this._logger.error("Update ", res);
         this.response = res
         if (res['code'] == 'true') {
           $('#myModal').modal('show');
@@ -62,7 +63,7 @@ export class RegisterComponent implements OnInit {
 
       this.formSubmitted = true;
       if (data.invalid) {
-        console.log("Inalid Form")
+        console.error("Inalid Form")
       } else {
         //console.log("Data for Register ", data.value)
         this._ser.register(data.value).subscribe((res) => {

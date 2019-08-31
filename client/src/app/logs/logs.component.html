@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Log</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let log of logs" class="bg-{{log['type']}}">
+      <td>{{log['created']}}</td>
+      <td>{{log['log']}}</td>
+      <td>{{log['type']}}</td>
+    </tr>
+  </tbody>
+</table>
