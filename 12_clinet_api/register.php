@@ -11,9 +11,10 @@
 
         $con = mysqli_connect("localhost","root","","12_00_7M");
         $str = "insert into users (name,contact,email,password)values('$data->name','$contactStr','$data->email','$data->password')";
-        $result = mysqli_query($con,$str) or die(json_encode(['msg'=>'error']));
-        echo json_encode(['msg'=>'success']);
+        $result = mysqli_query($con,$str) or die(json_encode(['msg'=>mysqli_error($con),'code'=>"false",
+        "class"=>"danger"]));
+        echo json_encode(['msg'=>'success','code'=>"true","class"=>"success"]);
     }else{
-        echo json_encode(['msg'=>'error']);
+        echo json_encode(['msg'=>'error','code'=>"false","class"=>"danger"]);
     }
  ?> 
