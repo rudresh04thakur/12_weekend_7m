@@ -26,7 +26,7 @@
             Invalid Name</div>
 
           <div formArrayName="contact">
-            <div class="form-group input-group" *ngFor="let c of reg.controls['contact'].controls; let c_index = index;"
+            <div class="form-group input-group" *ngFor="let c of reg.controls['contact']['controls']; let c_index = index;"
               [formGroupName]="c_index">
               <div class="input-group-prepend">
                 <span lass="input-group-text"><i class="fa fa-user"></i></span>

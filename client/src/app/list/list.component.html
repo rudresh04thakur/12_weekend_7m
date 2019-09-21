@@ -1,6 +1,7 @@
 
 <div class="container-fluid">
   <button (click)="redirectTo('/list/register')">Regiater</button>
+  <app-success msg="Delete Successful" *ngIf="successRes"></app-success>
   <table class="table table-striped">
     <thead>
       <tr>

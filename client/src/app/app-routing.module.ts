@@ -20,7 +20,7 @@ const routes: Routes = [
   ],canActivate:[AuthGuard]},
   // {path:'edit/:id',component:EditComponent},
    {path:'edit/:id',component:RegisterComponent},
-   {path: 'logs',component:LogsComponent}
+   {path: 'logs',component:LogsComponent},
 ];
 
 @NgModule({

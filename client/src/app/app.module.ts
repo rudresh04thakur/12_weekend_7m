@@ -15,6 +15,9 @@ import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
 import { KeysPipe } from './keys.pipe';
 import { LogsComponent } from './logs/logs.component';
+import { SuccessComponent } from './shared/success/success.component';
+import { SharedModule } from './shared/shared.module';
+import { CardoverDirective } from './cardover.directive';
 
 @NgModule({
   declarations: [
@@ -28,14 +31,17 @@ import { LogsComponent } from './logs/logs.component';
     EditComponent,
     ViewComponent,
     KeysPipe,
-    LogsComponent
+    LogsComponent,
+    SuccessComponent,
+    CardoverDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
