@@ -25,18 +25,18 @@ export class AllService {
     for (let k in data) {
       if (k != 'proFile') {
         if(data[k] instanceof Object){
-          let tempA="[";
+          let tempA="";
           for (let kk in data[k]){
             tempA+=data[k][kk]['mobile']+",";
             console.log("==========>",tempA)
           }
-          tempA=tempA.substr(0,tempA.length-1) + "]";
+          tempA=tempA.substr(0,tempA.length-1) + "";
           formData.append(k,tempA)
         }else{
           formData.append(k,data[k]);
         }
       } else {
-        formData.append(k, data[k],k);
+        formData.append(k, data[k],data[k]['name']);
       }
     };
 

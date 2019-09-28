@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
 
     this.reg = this._fb.group({
       id: [""],
-      proFile:[],
+      proFile: [],
       name: ["Gopal", [Validators.required, Validators.pattern('[A-Za-z]{3,}')]],
       contact: this._fb.array([this.initContact()]),
       email: ["gopal@thakur.com", [Validators.required, Validators.pattern('[A-Za-z_]{3,}[@]{1}[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}')]],
@@ -69,6 +69,25 @@ export class RegisterComponent implements OnInit {
     }
     this.reg.controls.proFile.patchValue(files[0]);
   }
+  demoCC(){
+    console.log("==================",window.location.origin)
+  }
+  onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+  }
+
+
 
 
   initContact() {
