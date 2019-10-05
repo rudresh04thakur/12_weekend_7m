@@ -7,9 +7,10 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './partial/header/header.component';
 import { FooterComponent } from './partial/footer/footer.component';
 import { FrontComponent } from './front.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
-  declarations: [HomeComponent, AboutComponent, HeaderComponent, FooterComponent, FrontComponent],
+  declarations: [HomeComponent, AboutComponent, HeaderComponent, FooterComponent, FrontComponent, ProductsComponent],
   imports: [
     CommonModule,
     FrontRoutingModule
